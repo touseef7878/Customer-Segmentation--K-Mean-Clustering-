@@ -1,8 +1,5 @@
-# ===============================================
 # Customer Segmentation using KMeans & DBSCAN
 # Dataset: Mall Customer Segmentation
-# ===============================================
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,27 +7,20 @@ from sklearn.cluster import KMeans, DBSCAN
 from sklearn.preprocessing import StandardScaler
 from mpl_toolkits.mplot3d import Axes3D
 
-# ===============================================
 # Step 1: Load dataset
-# ===============================================
 df = pd.read_csv("data/Mall_Customers.csv")
-
 print("Dataset Preview:")
 print(df.head())
 
-# ===============================================
 # Step 2: Select features for clustering
 # Using Age, Annual Income, Spending Score
-# ===============================================
 X = df[["Age", "Annual Income (k$)", "Spending Score (1-100)"]]
 
 # Standardize features for DBSCAN
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# ===============================================
 # Step 3: Find optimal clusters with Elbow Method
-# ===============================================
 inertia = []
 K = range(1, 11)
 
@@ -47,9 +37,7 @@ plt.title("Elbow Method for Optimal K")
 plt.savefig("images/kmeans_elbow.png")
 plt.close()
 
-# ===============================================
 # Step 4: Apply KMeans Clustering (K=5)
-# ===============================================
 kmeans = KMeans(n_clusters=5, random_state=42)
 df["KMeans_Cluster"] = kmeans.fit_predict(X)
 
@@ -80,9 +68,7 @@ plt.title("KMeans Clusters (3D)")
 plt.savefig("images/kmeans_clusters_3d.png")
 plt.close()
 
-# ===============================================
 # BONUS PART 1: Apply DBSCAN
-# ===============================================
 # DBSCAN works better with scaled data
 dbscan = DBSCAN(eps=0.7, min_samples=5)  # tune eps for dataset
 df["DBSCAN_Cluster"] = dbscan.fit_predict(X_scaled)
@@ -99,9 +85,7 @@ plt.title("DBSCAN Clusters (2D)")
 plt.savefig("images/dbscan_clusters.png")
 plt.close()
 
-# ===============================================
 # BONUS PART 2: Average Spending per Cluster
-# ===============================================
 avg_spending = df.groupby("KMeans_Cluster")["Spending Score (1-100)"].mean()
 
 plt.figure(figsize=(6, 4))
@@ -111,7 +95,7 @@ plt.xlabel("Cluster")
 plt.ylabel("Average Spending Score")
 plt.savefig("images/avg_spending.png")
 plt.close()
-
+# Final output
 print("\nAnalysis Completed ✅")
 print("Cluster averages:")
 print(avg_spending)
