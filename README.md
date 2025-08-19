@@ -56,15 +56,15 @@ pip install pandas numpy matplotlib seaborn scikit-learn xgboost
 
 ### 1. Feature Importance (Random Forest)
 
-![Feature Importance](..images/feature_importance_RandomForest.png)
+![Feature Importance](images/feature_importance_RandomForest.png)
 
 ### 2. Confusion Matrix (Random Forest)
 
-![RF Confusion](images/rf_confusion_matrix.png)
+![RF Confusion](images/confusion_matrix_RandomForest.png)
 
-### 3. Confusion Matrix (XGBoost - Bonus)
+### 3. Confusion Matrix (XGBoost)
 
-![XGB Confusion](images/xgb_confusion_matrix.png)
+![XGB Confusion](images/confusion_matrix_XGBoost.png)
 
 ---
 
