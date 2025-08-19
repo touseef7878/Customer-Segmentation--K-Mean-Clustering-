@@ -51,20 +51,22 @@ pip install pandas numpy matplotlib seaborn scikit-learn xgboost
 3. Check the `images/` folder for saved evaluation plots.
 
 ---
-
 ## 📊 Results & Visualizations
 
-### 1. Feature Importance (Random Forest)
+### 1. Elbow Method for Optimal K
+![Elbow Method](images/kmeans_elbow.png)
 
-![Feature Importance](images/feature_importance_RandomForest.png)
+### 2. KMeans Clusters (2D: Income vs Spending Score)
+![KMeans 2D](images/kmeans_clusters_2d.png)
 
-### 2. Confusion Matrix (Random Forest)
+### 3. KMeans Clusters (3D: Age, Income, Spending Score)
+![KMeans 3D](images/kmeans_clusters_3d.png)
 
-![RF Confusion](images/confusion_matrix_RandomForest.png)
+### 4. DBSCAN Clusters (2D: Income vs Spending Score)
+![DBSCAN Clusters](images/dbscan_clusters.png)
 
-### 3. Confusion Matrix (XGBoost)
-
-![XGB Confusion](images/confusion_matrix_XGBoost.png)
+### 5. Average Spending per KMeans Cluster
+![Avg Spending](images/avg_spending.png)
 
 ---
 
