@@ -9,21 +9,6 @@ We use customer demographics (Age, Income, Spending Score) to group shoppers int
 
 ---
 
-## 📂 Project Structure
-Customer_Segmentation/
-├── data/
-│ └── Mall_Customers.csv
-├── images/
-│ ├── kmeans_elbow.png
-│ ├── kmeans_clusters_2d.png
-│ ├── kmeans_clusters_3d.png
-│ ├── dbscan_clusters.png
-│ └── avg_spending.png
-├── customer_segmentation.py
-└── README.md
-
----
-
 ## ⚙️ Tools & Libraries
 - Python 🐍
 - Pandas  
